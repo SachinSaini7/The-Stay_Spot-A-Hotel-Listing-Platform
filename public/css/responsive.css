@@ -1,0 +1,182 @@
+/* responsive.css */
+
+/* Hide filters on mobile */
+@media (max-width: 768px) {
+  #filters {
+    display: none !important;
+  }
+
+  .row-cols-lg-3 {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    gap: 1rem;
+  }
+
+  .listing-card {
+    width: 100% !important;
+  }
+
+  .navbar-collapse {
+    background-color: white;
+    z-index: 9999;
+    padding: 1rem;
+  }
+
+  .navbar-collapse .navbar-nav {
+    flex-direction: column !important;
+    gap: 0.5rem;
+  }
+
+  .navbar-toggler {
+    z-index: 10000;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .search-inp {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+}
+
+/* Make image fully responsive */
+.listing-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fix nav dropdown visibility */
+.navbar-collapse.collapse.show {
+  display: block !important;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}       
+
+
+
+/*  */
+
+
+/* ================================ */
+/* Scoped Mobile Styles for Show Page */
+/* ================================ */
+@media (max-width: 768px) {
+  .show-page {
+    padding: 1rem;
+    font-size: clamp(14px, 2.2vw, 18px);
+  }
+
+  /* Listing card & details: full-width, left aligned */
+  .show-page .show-card,
+  .show-page .show-card .card-body {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Image fits container */
+  .show-page .show-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Reviews: stack vertically, full-width cards */
+  .show-page .review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .show-page .review-list .card {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0.75rem;
+  }
+
+  .show-page .review-list .card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .show-page .review-list .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Buttons full-width stacking */
+  .show-page .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .show-page .btns .btn {
+    width: 100% !important;
+  }
+
+  /* Map container responsive */
+  .show-page .map-container,
+  .show-page #map {
+    width: 100% !important;
+    height: 260px !important;
+    margin: 1rem 0;
+  }
+   .show-page .review-card {
+    width: 100% !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 0.75rem;
+  }
+
+  .show-page .review-card .card-body {
+    padding: 0.5rem;
+  }
+}
+
+
+/* Add Listing Responsive */
+
+/* Scoped styles for Create New Listing page using .new wrapper */
+.new {
+  padding: 1rem;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.new form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.new .form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.new .form-control,
+.new .form-select {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.new .btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}

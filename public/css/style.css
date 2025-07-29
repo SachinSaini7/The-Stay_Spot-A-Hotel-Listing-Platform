@@ -1,0 +1,208 @@
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 4rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+/* Footer-Styling */
+.footer-info{
+    background-color: lightgray;
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.f-info-links a{
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.fa-brands{
+    margin-left:1rem ;
+    font-size: 1.2rem;
+}
+
+.f-info-socials,.f-info-links,.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listing-card{
+   border: none !important;
+   margin-bottom:2rem;
+}
+
+.card-img-top{
+   border-radius: 1rem !important;
+   width: 100% !important;
+   object-fit: cover !important;
+   height: 15rem  !important;
+}
+
+.card-body{
+    padding: 0 !important;
+    border: none !important;
+    margin-bottom: 1.25rem;
+}
+
+.card-text p,a{
+    text-decoration: none;
+    font-weight: 400 !important;
+}
+
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* card effect */
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    background-color: white;
+    opacity: 0.2;
+}
+
+/* Show Styling */
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* MAP Styling */
+
+#map{
+    height: 360px;
+    width: 96vh;
+}
+
+
+/* Tax Switch  */
+
+      #filters{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .filter{
+        text-align: center;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        opacity: 0.8;
+      }
+
+      .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .filter p,i {
+        font-size: 0.8rem;
+      }
+
+      .filter i{
+        text-decoration: none;
+        color: #222222;
+      }
+
+      .tax-info{
+        display: none;
+      }
+
+      .filter-location{
+        height: 3.5rem;
+        margin-top: 1.8rem;
+        text-align: center;
+        padding: 0.8rem;
+        background: linear-gradient(135deg, #ff6b6b, #ff4b4b);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: filter 0.2s, transform 0.2s;
+        display: inline-block;
+        width: fit-content;
+        padding: 0.5em 1em;
+        font-size: 0.9rem;   
+    }
+        .filter-location:hover {
+        filter: brightness(115%);   
+        transform: translateY(-2px);
+    }
+        .filter-location:active {
+        filter: brightness(90%);
+        transform: translateY(0);
+    }
+
+
+      .tax-toggle{
+        border: 1px solid black;
+        border-radius: 1rem ;
+        height: 2.5rem;
+        padding: 1rem;
+        margin-left: 1.5rem;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center ;
+        text-align: center;
+      }
+
+     
+/* listings transition */
+
+.animated-card {
+  /* opacity: 0; */
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+.animated-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#filters a{
+    color: #000;
+    text-decoration: none;
+}

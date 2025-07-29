@@ -1,0 +1,101 @@
+<%- layout("/layouts/basic") %>
+
+<div id="filters">
+
+    <a href="/listings">
+      <div class="filter">
+      <div><i class="fa-solid fa-home"></i></div>
+      <p>Home</p>
+    </div>
+    </a>
+
+    <a href="/listings/category/Rooms">
+      <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+      </div>
+    </a>
+
+    <a href="/listings/category/Mountains">
+      <div class="filter">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+      </div>
+    </a>
+
+    <a href="/listings/category/Iconic City">
+      <div class="filter">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+      </div>
+    </a>
+
+     <a href="/listings/category/Amazing Pools">
+      <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+      </div>
+    </a>
+
+     <a href="/listings/category/Camping">
+      <div class="filter">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+      </div>
+    </a>
+
+     <a href="/listings/category/Farms">
+      <div class="filter">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+      </div>
+    </a>
+
+    <a href="/listings/category/Arctic">
+      <div class="filter">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p>
+      </div>
+    </a>
+  
+<!-- Location Filter -->
+      <div class="filter-location">
+        <div><i class="fa-solid fa-filter"></i></div>
+        <p>Filter Categories</p>
+      </div>
+
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+          <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+        </div>
+      </div>
+    </div>
+    
+     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 ">
+        <% for (Listing of allListings){ %>
+            <a href="/listings/<%=Listing._id %>" class="listing-link">
+            <div class="card col listing-card animated-card"style="width: 20rem;">
+                <img src="<%= Listing.image.url%>" class="card-img-top" alt="listing_image">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <b><p class="card-text"><%=Listing.title.toLocaleString("en-IN")%></p></b> <br>
+                  <p> &#8377; <%=Listing.price%>/night
+                  <i class="tax-info">&nbsp; &nbsp;+ 18% GST</i>
+                  </p>
+                </div>
+              </div>
+            </a>
+            <% }%>
+     </div>  
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".listing-card");
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add("show");
+      }, index * 100); // stagger effect
+    });
+  });
+</script>
