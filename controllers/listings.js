@@ -52,7 +52,10 @@ module.exports.searchListing = async (req, res) => {
       { country: new RegExp(q, "i") },
     ],
   });
-
+  if(allListings.length==0){
+    req.flash("error","No listings match your search!");
+    return res.redirect("/listings");
+  }
   res.render("listings/index.ejs", {allListings});
 };
 
