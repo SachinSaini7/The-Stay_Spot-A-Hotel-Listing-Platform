@@ -35,15 +35,21 @@ const dbUrl=process.env.ATLASDB_URL;
 
 // Database Connection
 
-main()
-.then(()=>{
-    console.log("Connection Successful");
-}).catch((err)=>{
-    console.log(err);
-})
-async function main(){
-  await mongoose.connect(dbUrl);
+async function main() {
+  try {
+    await mongoose.connect(dbUrl, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      ssl: true,
+      tlsAllowInvalidCertificates: false, 
+    });
+    console.log("✅ MongoDB connection established successfully");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
 }
+
+main();
 
 const store = MongoStore.create({
   client: mongoose.connection.getClient(),
