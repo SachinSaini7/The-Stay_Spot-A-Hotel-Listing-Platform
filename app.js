@@ -52,15 +52,16 @@ async function main() {
 main();
 
 const store = MongoStore.create({
-  client: mongoose.connection.getClient(),
+  mongoUrl: dbUrl,
   crypto: {
-     secret: process.env.SECRET },
-  touchAfter: 24*3600,
+    secret: process.env.SECRET
+  },
+  touchAfter: 24 * 3600 // 1 day
 });
 
 store.on("error",()=>{
   console.log("Error in Mongo Session Store");
-})
+});
 
 const sessionOptions={
   store,
